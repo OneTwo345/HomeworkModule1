@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Bài 4: Sử dụng JS để thiết kế lớp Agency.
+        + Lớp này có các thuộc tính sau:
+        - agencyCode
+        – agencyName
+        – phoneNumber
+        – address
+        – email
+        + Lớp này có constructor nhận vào 5 thuộc tính trên
+        + Lớp này có các phương thức sau
+        - getPhonenumber() -> trả về số điện thoại của đại lý và 3 số cuối của điện thoại thay bằng 3 chữ X
+        - getInfo() -> Hiển thị thông tin đầy đủ về 1 đại lý (đủ cả 5 thông tin)
+        + tạo một mảng agencyList gồm 2 object từ class Agency trên
+        + Viết các hàm sau:
+        - createAgency() để thêm mới 1 agency vào trong mảng agencyList
+        - removeAgency(agencyCode): để xóa 1 agency ra khỏi agenceyList trên</h3>
+</body>
+<script>
+    class Agency {
+        constructor(agencyCode, agencyName, phoneNumber, address, email) {
+            this.agencyCode = agencyCode;
+            this.agencyName = agencyName;
+            this.phoneNumber = phoneNumber;
+            this.address = address;
+            this.email = email;
+            this.getPhonenumber = function () {
+                let newNumber = this.phoneNumber.slice(-3);
+                let mainPhoneNumber = newNumber.concat("XXX");
+                return mainPhoneNumber;
+            }
+            this.getInfo = function () {
+                let infoArr = [this.agencyCode, this.agencyName, this.phoneNumber, this.address, this.email];
+                return infoArr
+            }
+        }
+    }
+    let agency1 = new Agency("C0423I1", "Duy", "0789123456", "Hue", "duy@gmail.com")
+    let agency2 = new Agency("C0423I1", "Hoang", "0789412523", "Ha Noi", "hoang@gmail.com")
+    let agency3 = new Agency("C123123", "Hieu", "1321321321", "Hue", "hieu@gmail.com")
+    let agencyList = [];
+    agencyList.push(agency1);
+    agencyList.push(agency2);
+    console.log(agencyList);
+    function createAgency(arr) {
+        agencyList.push(arr);
+        return agencyList
+    }
+    createAgency(agency3);
+    createAgency(agency3);
+    createAgency(agency3);
+    console.log(agencyList);
+    function removeAgency(agenceyList, agencyName) {
+        agencyList = agenceyList.filter(agency => agency.agencyName !== agencyName)
+    }
+    removeAgency(agencyList, "Duy");
+    console.log(agencyList);
+
+    function removeAgency1(arr, i) {
+        arr = arr.splice(i, 1);
+    };
+    removeAgency1(agencyList, 1);
+    console.log(agencyList);
+
+
+
+
+
+
+
+</script>
+
+</html>

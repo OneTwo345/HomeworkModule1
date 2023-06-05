@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Bài 1: Hãy đưa chẵn về đầu, lẻ về cuối,
+        phần tử 0 nằm giữa mảng</h3>
+</body>
+<script>
+    let myArray = [1, 6, 5, 4, 8, 9, 10, 2, 0, 7];
+
+    let myArray1 = [];
+    let myArray2 = [];
+    let myArray3 = [];
+
+
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] == 0) {
+            myArray1.push(myArray[i])
+        } else {
+            if (myArray[i] % 2 == 0) {
+                myArray2.push(myArray[i])
+            } else {
+                myArray3.push(myArray[i])
+
+            }
+        }
+
+    }
+    // console.log(myArray1);
+    console.log(myArray2);
+    console.log(myArray3);
+    mainArray = (myArray2.concat(myArray1)).concat(myArray3);
+    console.log(mainArray);
+
+</script>
+
+</html>
