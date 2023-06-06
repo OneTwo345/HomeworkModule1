@@ -34,7 +34,7 @@
             this.address = address;
             this.email = email;
             this.getPhonenumber = function () {
-                let newNumber = this.phoneNumber.slice(-3);
+                let newNumber = this.phoneNumber.slice(0, -3);
                 let mainPhoneNumber = newNumber.concat("XXX");
                 return mainPhoneNumber;
             }
